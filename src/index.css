@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.underline-thick {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .underline-thick:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 7px;
+    height:3px;
+    background-color: currentColor;
+    border-radius: 8px;
+    animation: animate-link .5s both ease;
+    -webkit-animation: animate-link .5s both ease;
+}
+
+.navbar-animation{
+    animation:animate-navbar 2s ease ;
+    -webkit-animation:animate-navbar 2s ease ;
+}
+
+
+@keyframes animate-navbar {
+    0%{
+        left: -100%;
+}
+    100% {
+        left: 0;
+}
+}
+@keyframes animate-link {
+    0%{
+        width: 0;
+    }
+    100% {
+        width: 80%;
+    }
+}
+
+
+.text-shadow{
+    /* text-shadow: 5px 5px 1px #fdd78c67 ; */
+    text-shadow:3px 3px 5px #5e4109,-3px -3px 5px #c59536;
+}
+
+/* .neumorphic-text {
+    color: #333;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow:
+      3px 3px 5px #a3b1c6,
+      -3px -3px 5px #ffffff;
+  } */
