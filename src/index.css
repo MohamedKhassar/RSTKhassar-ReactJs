@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .underline-thick {
     position: relative;
     display: inline-block;
@@ -50,11 +51,68 @@
     text-shadow:3px 3px 5px #5e4109,-3px -3px 5px #c59536;
 }
 
-/* .neumorphic-text {
-    color: #333;
-    font-size: 2rem;
-    text-align: center;
-    text-shadow:
-      3px 3px 5px #a3b1c6,
-      -3px -3px 5px #ffffff;
-  } */
+::-webkit-scrollbar {
+  width: 5px;
+  -webkit-border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-thumb {
+    /* Customize the scrollbar thumb */
+    border-radius: 20px;
+    @apply bg-slate-700
+}
+
+.embla {
+    max-width: 48rem;
+    height: fit-content;
+    margin: auto;
+    --slide-height: 19rem;
+    --slide-spacing: 1rem;
+    --slide-size: 70%;
+  }
+  .embla__viewport {
+    overflow: hidden;
+  }
+  .embla__container {
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    margin-left: calc(var(--slide-spacing) * -1);
+  }
+  .embla__slide {
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    padding-left: var(--slide-spacing);
+  }
+  .embla__slide__img {
+    border-radius: 1.8rem;
+    display: block;
+    height: var(--slide-height);
+    width: 100%;
+    object-fit: cover;
+  }
+  .embla__controls {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: space-between;
+    gap: 1.2rem;
+    margin-top: 1.8rem;
+  }
+
+
+  .text-shadow-animate{
+      animation:text-shadow-animate 2s infinite ease alternate-reverse ;
+      -webkit-animation:text-shadow-animate 1s infinite ease alternate-reverse ;
+}
+
+@keyframes text-shadow-animate{
+      0%{
+        text-shadow:10px 10px 50px #5e4109,-3px -3px 10px #c59536;
+      }
+      100%{
+        text-shadow:10px 10px 50px #5e4109,-3px -3px 10px #c595362c;
+      }
+}
