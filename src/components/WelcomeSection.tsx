@@ -15,7 +15,7 @@ const WelcomeSection = () => {
     return (
         <div className="z-0 lg:h-screen h-fit bg-slate-700 flex flex-col lg:space-y-20 space-y-10 justify-start items-center">
             <Carousel slides={SLIDES} options={OPTIONS} />
-            <p data-aos="fade-up" className="text-[#FDD78C] font-Montserrat lg:text-2xl text-sm font-bold lg:w-1/2 w-[80%] lg:text-center text-justify">
+            <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" className="text-[#FDD78C] font-Montserrat lg:text-2xl text-sm font-bold lg:w-1/2 w-[80%] lg:text-center text-justify">
                 Welcome to Resto Kayang, your destination for authentic Moroccan cuisine. Enjoy a culinary journey with dish<span className="opacity-50">es like savory tagine and delightful couscous. Join us for a memorable dining experience where tradition meets taste.</span>
             </p>
             <hr className="bg-[#FDD78C] w-[90%] h-1 rounded-md" />

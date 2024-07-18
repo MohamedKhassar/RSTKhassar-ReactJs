@@ -8,9 +8,8 @@ import 'aos/dist/aos.css';
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
-      delay: 100,
-      easing: 'ease-in-out', // easing function to use for the animation
+      duration: 500,
+      easing: 'ease-in-sine',
     });
   }, []);
   return (

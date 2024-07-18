@@ -1,11 +1,11 @@
 import { motion } from "framer-motion"
-// import tomato from "/assets/img/tomato.png"
+import plate_bg from "/assets/img/plate.jpg"
 import steak from "/assets/img/steak.png"
 const Slogan = () => {
     const day = new Date().getDay();
     const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     return (
-        <div className="bg-[url(assets/img/plate.jpg)] h-screen bg-no-repeat bg-cover bg-center flex flex-col justify-center items-center space-y-20">
+        <div className="h-screen bg-no-repeat bg-cover bg-center flex flex-col justify-center items-center space-y-20" style={{ backgroundImage: `url(${plate_bg})` }}>
             <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: .5, ease: "easeIn" }} className="text-6xl lg:text-[150px] uppercase  flex flex-col justify-center items-center text-center font-Montserrat font-extrabold text-shadow text-[#FDD78c] italic lg:mt-52">
                 <p className="flex gap-x-5 select-none justify-center items-center">
                     Resto

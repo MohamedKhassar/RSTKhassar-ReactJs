@@ -83,7 +83,7 @@ const Carousel: React.FC<PropType> = (props) => {
     }, [emblaApi, tweenOpacity])
 
     return (
-        <div data-aos="fade-up" className='pt-10 flex flex-col justify-center items-center gap-y-10'>
+        <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" className='pt-10 flex flex-col justify-center items-center gap-y-10'>
             <h1 className='text-[#FDD78C] font-Montserrat lg:text-4xl text-xl font-bold text-center'>Welcome to <span className='lg:text-5xl text-[24px] text-shadow-animate uppercase font-bold'>rstkhassar</span></h1>
             <div className="embla rounded-md overflow-hidden shadow-2xl shadow-[#FDD78C]/30">
                 <div className="embla__viewport" ref={emblaRef}>
@@ -93,7 +93,7 @@ const Carousel: React.FC<PropType> = (props) => {
                                 <img
                                     className="embla__slide__img object-cover"
                                     src={index}
-                                    alt="Your alt text"
+                                    alt="Your alt text" loading='lazy'
                                 />
                             </div>
                         ))}

@@ -23,8 +23,8 @@
 }
 
 .navbar-animation{
-    animation:animate-navbar 2s ease ;
-    -webkit-animation:animate-navbar 2s ease ;
+    animation:animate-navbar .5s ease ;
+    -webkit-animation:animate-navbar .5s ease ;
 }
 
 
