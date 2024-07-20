@@ -6,6 +6,7 @@ import {
 } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
+import { Fade } from 'react-awesome-reveal'
 
 const TWEEN_FACTOR_BASE = 0.84
 
@@ -83,7 +84,7 @@ const Carousel: React.FC<PropType> = (props) => {
     }, [emblaApi, tweenOpacity])
 
     return (
-        <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" className='pt-10 flex flex-col justify-center items-center gap-y-10'>
+        <Fade direction="up" duration={1000} className='pt-10 flex flex-col justify-center items-center gap-y-10'>
             <h1 className='text-[#FDD78C] font-Montserrat lg:text-4xl text-xl font-bold text-center'>Welcome to <span className='lg:text-5xl text-[24px] text-shadow-animate uppercase font-bold'>rstkhassar</span></h1>
             <div className="embla rounded-md overflow-hidden shadow-2xl shadow-[#FDD78C]/30">
                 <div className="embla__viewport" ref={emblaRef}>
@@ -100,7 +101,7 @@ const Carousel: React.FC<PropType> = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Fade>
     )
 }
 

@@ -19,7 +19,7 @@ const Slogan = () => {
                         <p>09:00-22:00</p>
                     </div>
                     <div className="duration-300 gap-x-5 hover:text-[#FDD78C] hover:bg-[#694909] border-2 lg:border-[#694909] lg:text-[#694909] text-[#FDD78C] border-[#FDD78C] cursor-pointer rounded-md lg:px-5 lg:py-3 flex justify-between lg:text-2xl text-xl p-2 items-center font-Montserrat font-semibold">
-                        <h1 className="">{dayNames[day + 1]}</h1>
+                        <h1 className="">{day == dayNames.length - 1 ? dayNames[0] : dayNames[day]}</h1>
                         <p>09:00-22:00</p>
                     </div>
                 </div>
