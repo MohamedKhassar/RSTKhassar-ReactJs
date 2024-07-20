@@ -6,49 +6,52 @@
 
 
 .underline-thick {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .underline-thick:hover::after {
-    content: "";
-    position: absolute;
-    bottom: 2px;
-    left: 7px;
-    height:3px;
-    background-color: currentColor;
-    border-radius: 8px;
-    animation: animate-link .5s both ease;
-    -webkit-animation: animate-link .5s both ease;
+  position: relative;
+  display: inline-block;
 }
 
-.navbar-animation{
-    animation:animate-navbar .5s ease ;
-    -webkit-animation:animate-navbar .5s ease ;
+.underline-thick:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 7px;
+  height: 3px;
+  background-color: currentColor;
+  border-radius: 8px;
+  animation: animate-link .5s both ease;
+  -webkit-animation: animate-link .5s both ease;
+}
+
+.navbar-animation {
+  animation: animate-navbar .5s ease;
+  -webkit-animation: animate-navbar .5s ease;
 }
 
 
 @keyframes animate-navbar {
-    0%{
-        left: -100%;
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 0;
+  }
 }
-    100% {
-        left: 0;
-}
-}
+
 @keyframes animate-link {
-    0%{
-        width: 0;
-    }
-    100% {
-        width: 80%;
-    }
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 80%;
+  }
 }
 
 
-.text-shadow{
-    /* text-shadow: 5px 5px 1px #fdd78c67 ; */
-    text-shadow:3px 3px 5px #5e4109,-3px -3px 5px #c59536;
+.text-shadow {
+  /* text-shadow: 5px 5px 1px #fdd78c67 ; */
+  text-shadow: 3px 3px 5px #5e4109, -3px -3px 5px #c59536;
 }
 
 ::-webkit-scrollbar {
@@ -56,63 +59,96 @@
   -webkit-border-radius: 20px;
 }
 
-::-webkit-scrollbar-track {
-}
+::-webkit-scrollbar-track {}
 
 ::-webkit-scrollbar-thumb {
-    /* Customize the scrollbar thumb */
-    border-radius: 20px;
-    @apply bg-slate-700
+  /* Customize the scrollbar thumb */
+  border-radius: 20px;
+  @apply bg-slate-700
 }
 
 .embla {
-    max-width: 48rem;
-    height: fit-content;
-    margin: auto;
-    --slide-height: 19rem;
-    --slide-spacing: 1rem;
-    --slide-size: 70%;
-  }
-  .embla__viewport {
-    overflow: hidden;
-  }
-  .embla__container {
-    backface-visibility: hidden;
-    display: flex;
-    touch-action: pan-y pinch-zoom;
-    margin-left: calc(var(--slide-spacing) * -1);
-  }
-  .embla__slide {
-    flex: 0 0 var(--slide-size);
-    min-width: 0;
-    padding-left: var(--slide-spacing);
-  }
-  .embla__slide__img {
-    border-radius: 1.8rem;
-    display: block;
-    height: var(--slide-height);
-    width: 100%;
-    object-fit: cover;
-  }
-  .embla__controls {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    justify-content: space-between;
-    gap: 1.2rem;
-    margin-top: 1.8rem;
-  }
-
-
-  .text-shadow-animate{
-      animation:text-shadow-animate 2s infinite ease alternate-reverse ;
-      -webkit-animation:text-shadow-animate 1s infinite ease alternate-reverse ;
+  max-width: 48rem;
+  height: fit-content;
+  margin: auto;
+  --slide-height: 19rem;
+  --slide-spacing: 1rem;
+  --slide-size: 70%;
 }
 
-@keyframes text-shadow-animate{
-      0%{
-        text-shadow:10px 10px 50px #5e4109,-3px -3px 10px #c59536;
-      }
-      100%{
-        text-shadow:10px 10px 50px #5e4109,-3px -3px 10px #c595362c;
-      }
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+}
+
+.embla__slide__img {
+  border-radius: 1.8rem;
+  display: block;
+  height: var(--slide-height);
+  width: 100%;
+  object-fit: cover;
+}
+
+.embla__controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+
+.text-shadow-animate {
+  animation: text-shadow-animate 2s infinite ease alternate-reverse;
+  -webkit-animation: text-shadow-animate 1s infinite ease alternate-reverse;
+}
+
+@keyframes text-shadow-animate {
+  0% {
+    text-shadow: 10px 10px 50px #5e4109, -3px -3px 10px #c59536;
+  }
+
+  100% {
+    text-shadow: 10px 10px 50px #5e4109, -3px -3px 10px #c595362c;
+  }
+}
+
+.animated-text {
+  animation: animated-text .8s linear;
+  -webkit-animation: animated-text .8s linear;
+}
+
+@keyframes animated-text {
+  0% {
+    opacity: 0
+  }
+
+  50% {
+    opacity: .5
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+img {  
+  user-drag: none;  
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
