@@ -15,6 +15,9 @@ const SLIDES = [
 const WelcomeSection = () => {
     return (
         <div id="about" className="z-0 h-fit bg-slate-700 flex flex-col lg:space-y-20 space-y-10 justify-start items-center py-20">
+            <Fade direction="up" duration={1000} className="flex justify-center">
+                <h1 className='text-[#FDD78C] font-Montserrat lg:text-4xl text-xl font-bold text-center'>Welcome to <span className='lg:text-5xl text-[24px] text-shadow-animate uppercase font-bold'>rstkhassar</span></h1>
+            </Fade>
             <Carousel slides={SLIDES} options={OPTIONS} />
             <Fade cascade direction="up" duration={1000} className="flex justify-center">
                 <p className="text-[#FDD78C] font-Montserrat lg:text-2xl text-sm font-bold lg:w-1/2 w-[80%] lg:text-center text-justify">

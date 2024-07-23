@@ -20,8 +20,7 @@ const Carousel: React.FC<PropType> = (props) => {
 
 
     return (
-        <Fade cascade direction="down" duration={1000} className='pt-10 flex flex-col justify-center items-center gap-y-10'>
-            <h1 className='text-[#FDD78C] font-Montserrat lg:text-4xl text-xl font-bold text-center'>Welcome to <span className='lg:text-5xl text-[24px] text-shadow-animate uppercase font-bold'>rstkhassar</span></h1>
+        <Fade duration={500} className='pt-10 flex flex-col justify-center items-center gap-y-10'>
             <div className="embla rounded-md overflow-hidden shadow-2xl shadow-[#FDD78C]/30">
                 <div className="embla__viewport" ref={emblaRef}>
                     <div className="embla__container rounded-lg">
