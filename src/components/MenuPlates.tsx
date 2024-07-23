@@ -1,4 +1,5 @@
 import { Rating } from "@mui/material"
+import { useState } from "react"
 import { Fade } from "react-awesome-reveal"
 const MenuPlates = () => {
     const moroccan_foods = [
@@ -60,11 +61,10 @@ const MenuPlates = () => {
             "price": 5.99
         }
     ]
-
-
-
+    const [nOfCard, setNOfCard] = useState(4)
+    const newArr = moroccan_foods.slice(0, nOfCard)
     return (
-        <div className="-mt-6 rounded-3xl bg-[#1D1D1D] w-full px-8 py-20 text-white space-y-20 relative z-10">
+        <div id="menu" className="-mt-6 rounded-3xl bg-[#1D1D1D] w-full px-8 py-20 text-white space-y-20 relative z-10">
             <Fade cascade duration={1000} direction="left">
                 <div className="flex lg:flex-row flex-col space-y-5 lg:justify-between lg:items-end justify-center items-center">
                     <div className="space-y-4 w-full">
@@ -78,7 +78,7 @@ const MenuPlates = () => {
             </Fade>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10 place-items-center h-fit">
                 <Fade duration={1000} direction="left">
-                    {moroccan_foods.map((food, i) =>
+                    {newArr.slice(0, nOfCard).map((food, i) =>
                         <div className="rounded-lg lg:w-[30rem] space-y-7 hover:scale-105 duration-300 cursor-pointer w-[18rem] shadow-2xl hover:shadow-gray-500 p-5" key={i}>
                             <img src={`/assets/img/${food.image}`} className="lg:h-[20rem] lg:w-[30rem] rounded-md object-cover" alt="" />
                             <h1 className="lg:text-3xl text-2xl font-Montserrat font-bold capitalize">{food.title}</h1>
@@ -92,6 +92,14 @@ const MenuPlates = () => {
                     )}
                 </Fade>
             </div>
+            {newArr[newArr.length - 1].title !== moroccan_foods[moroccan_foods.length - 1].title ?
+                <div className="flex justify-center">
+                    <button className="font-Montserrat font-semibold capitalize rounded-md shadow-2xl shadow-gray-500 w-1/2 p-5" onClick={() => setNOfCard(prev => prev += 4)}>load more</button>
+                </div> :
+                <div className="flex justify-center">
+                    <button className="font-Montserrat font-semibold capitalize rounded-md shadow-2xl shadow-gray-500 w-1/2 p-5" onClick={() => setNOfCard(prev => prev -= 4)}>Show less</button>
+                </div>
+            }
         </div>
     )
 }

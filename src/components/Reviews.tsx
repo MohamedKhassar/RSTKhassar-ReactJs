@@ -32,7 +32,6 @@ const Reviews = () => {
         'https://images.unsplash.com/photo-1620400975054-4676c969e6c4?w=150',
         'https://images.unsplash.com/photo-1653857977833-43ca63136ebd?w=150',
         'https://images.unsplash.com/photo-1631377894831-46173f7af1f9?w=150',
-        'https://images.unsplash.com/photo-1682368360051-f73e87dd9106D?w=150',
         'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=150',
         'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=150',
         'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?w=150',
@@ -102,10 +101,13 @@ const Reviews = () => {
         return () => clearInterval(interval);
     }, [currentIndex]);
     return (
-        <div className="overflow-hidden h-fit w-full bg-slate-700 -mt-6 flex items-center justify-center relative py-20 flex-col lg:gap-y-20 gap-y-10">
+        <div id="reviews" className="overflow-hidden lg:h-screen w-full bg-slate-700 -mt-6 flex items-center justify-center lg:py-0 py-20 relative flex-col lg:gap-y-20 gap-y-10">
+            <Fade direction="left" cascade duration={1000} className="w-full">
+                <h1 className="lg:text-5xl text-2xl italic font-Montserrat font-bold text-left w-full lg:ml-16 ml-10 text-[#ffc248] underline underline-offset-8">Reviews</h1>
+            </Fade >
             <Fade direction="down" cascade duration={1000}>
                 <div className={`flex w-full flex-col justify-center items-center lg:gap-y-16 gap-y-10 ${animate ? "animated-text" : ""}`}>
-                    <p className="font-Montserrat lg:text-4xl text-lg mx-3 lg:w-1/2 text-center font-bold text-[#FDD78C]">
+                    <p className="font-Montserrat lg:text-4xl lg:mx-3 mx-5 lg:w-1/2 text-center font-bold text-[#FDD78C]">
                         "{reviews[currentIndex].comment}"
                     </p>
                     <h1 className="font-Montserrat lg:text-xl text-sm w-1/2 text-center font-semibold text-[#FDD78C]">

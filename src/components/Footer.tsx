@@ -95,7 +95,7 @@ const Footer = () => {
                         </Fade>
                     </div>
                     <Fade className="sm:flex flex-col justify-center items-end h-full relative -bottom-5">
-                        <small className="lg:float-end text-lg text-gray-300 capitalize font-Montserrat font-semibold">&#169; RSTKHASSAR. all rights reserved</small>
+                        <small className="lg:float-end lg:text-lg text-[11px] text-gray-300 capitalize font-Montserrat font-semibold">&#169; RSTKHASSAR. all rights reserved</small>
                     </Fade>
                 </div>
             </div>

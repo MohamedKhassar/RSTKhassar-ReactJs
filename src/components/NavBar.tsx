@@ -48,10 +48,10 @@ const NavBar = () => {
             </Fade>
             <Fade cascade direction="down">
                 <ul className={`lg:flex  ${isOpened ? "navbar-animation flex flex-col fixed w-full h-[95vh] left-0 top-[4.2rem] py-32 px-10 justify-center lg:justify-start items-center bg-black/20 backdrop-blur-md" : "hidden"} capitalize lg:flex items-center gap-5 ${!scrolled ? 'lg:text-slate-700' : "text-[#FDD78C]"} text-[#FDD78C] font-Montserrat font-bold duration-300`}>
-                    <li className="lg:text-base text-2xl  underline-thick p-2 cursor-pointer"><a href="">about</a></li>
-                    <li className="lg:text-base text-2xl underline-thick p-2 cursor-pointer"><a href="">menu</a></li>
-                    <li className="lg:text-base text-2xl underline-thick p-2 cursor-pointer"><a href="">contact us</a></li>
-                    <li className={`lg:text-base text-xl lg:p-2 p-3 ${!scrolled && "lg:hover:bg-slate-500 lg:border-slate-500"} border-2 hover:bg-[#FDD78C] cursor-pointer border-[#FDD78C] hover:text-slate-500 lg:hover:text-white rounded-md duration-300`}><a href="">book online</a></li>
+                    <li className="lg:text-base text-2xl  underline-thick p-2 cursor-pointer"><a onClick={() => scrollTo(0, Number(document.getElementById("about")?.offsetTop))}>about</a></li>
+                    <li className="lg:text-base text-2xl underline-thick p-2 cursor-pointer"><a onClick={() => scrollTo(0, Number(document.getElementById("menu")?.offsetTop))}>menu</a></li>
+                    <li className="lg:text-base text-2xl underline-thick p-2 cursor-pointer"><a onClick={() => scrollTo(0, Number(document.getElementById("reviews")?.offsetTop))}>reviews</a></li>
+                    <li className={`lg:text-base text-xl lg:p-2 p-3 ${!scrolled && "lg:hover:bg-slate-500 lg:border-slate-500"} border-2 hover:bg-[#FDD78C] cursor-pointer border-[#FDD78C] hover:text-slate-500 lg:hover:text-white rounded-md duration-300`}>book online</li>
                 </ul>
             </Fade>
             <div className="lg:hidden z-50">
