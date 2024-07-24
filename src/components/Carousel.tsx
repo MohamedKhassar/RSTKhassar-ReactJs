@@ -1,43 +1,55 @@
-import {
-    EmblaOptionsType
-} from 'embla-carousel'
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
-import { Fade } from 'react-awesome-reveal'
+import { useEffect, useState } from "react"
+import { Timeout } from "react-alice-carousel";
 
-
-type PropType = {
-    slides: string[]
-    options?: EmblaOptionsType
+interface CarouselProps {
+    items: string[];
+    autoPlay?: boolean;
+    autoPlayInterval?: number;
 }
 
-const Carousel: React.FC<PropType> = (props) => {
-    const { slides, options } = props
-    const [emblaRef] = useEmblaCarousel(options, [Autoplay({ stopOnFocusIn: false, delay: 8000, stopOnInteraction: false, stopOnMouseEnter: false })])
+export const Carousel: React.FC<CarouselProps> = ({
+    items,
+    autoPlay = true,
+    autoPlayInterval = 3000
+}) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    useEffect(() => {
+        if (isAnimating) {
+            const timer = setTimeout(() => {
+                setIsAnimating(false);
+            }, 700);
+
+            return () => clearTimeout(timer);
+        }
+    }, [isAnimating]);
+
+    useEffect(() => {
+        let interval: Timeout;
+        if (autoPlay) {
+            interval = setInterval(() => {
+                nextSlide();
+            }, autoPlayInterval);
+        }
+        return () => clearInterval(interval);
+    }, [currentIndex, autoPlay, autoPlayInterval]);
 
 
-
+    const nextSlide = () => {
+        const newIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
+        setCurrentIndex(newIndex);
+        new Promise(() => setIsAnimating(true)).then(() => setIsAnimating(false))
+    };
 
 
     return (
-        <Fade duration={500} className='pt-10 flex flex-col justify-center items-center gap-y-10'>
-            <div className="embla rounded-md overflow-hidden shadow-2xl shadow-[#FDD78C]/30">
-                <div className="embla__viewport" ref={emblaRef}>
-                    <div className="embla__container rounded-lg">
-                        {slides.map((index) => (
-                            <div className="embla__slide" key={index}>
-                                <img
-                                    className="embla__slide__img object-cover"
-                                    src={index}
-                                    alt="Your alt text" loading='lazy'
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
+        <div className="flex justify-center w-[70rem] lg:h-[30rem] h-[12rem] rounded-md overflow-hidden">
+            <div className="flex justify-center items-center gap-x-4">
+                <img src={currentIndex == 0 ? items[items.length - 1] : items[currentIndex - 1]} className={`lg:w-80 lg:h-60 w-52 h-36 object-cover rounded-md scale-95 blur-sm  ${isAnimating ? "animated-text" : ""}`} alt="item" loading="lazy" />
+                <img src={items[currentIndex]} className={`lf:w-96 lg:h-56 w-44 h-28 object-cover rounded-lg scale-150 z-30 ${isAnimating ? "animated-text" : ""}`} alt="item" loading="lazy" />
+                <img src={currentIndex == items.length - 1 ? items[0] : items[currentIndex + 1]} className={`lg:w-80 lg:h-60  w-52 h-36 object-cover rounded-md scale-95 blur-sm  ${isAnimating ? "animated-text" : ""} z-10`} alt="item" loading="lazy" />
             </div>
-        </Fade>
+        </div>
     )
 }
-
-export default Carousel

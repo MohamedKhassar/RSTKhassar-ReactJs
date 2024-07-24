@@ -144,8 +144,8 @@
   }
 }
 
-img {  
-  user-drag: none;  
+img {
+  user-drag: none;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
@@ -153,6 +153,7 @@ img {
   -ms-user-select: none;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
+

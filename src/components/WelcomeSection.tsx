@@ -1,10 +1,9 @@
 import { Fade } from "react-awesome-reveal";
-import Carousel from "./Carousel";
+import { Carousel } from "./Carousel";
 import image_1 from "/assets/img/1.jpg"
 import image_2 from "/assets/img/2.jpg"
 import image_3 from "/assets/img/3.jpg"
-import { EmblaOptionsType } from "embla-carousel"
-const OPTIONS: EmblaOptionsType = { loop: true }
+// const OPTIONS: EmblaOptionsType = { loop: true }
 const SLIDES = [
     image_1,
     image_2,
@@ -18,7 +17,7 @@ const WelcomeSection = () => {
             <Fade direction="up" duration={1000} className="flex justify-center">
                 <h1 className='text-[#FDD78C] font-Montserrat lg:text-4xl text-xl font-bold text-center'>Welcome to <span className='lg:text-5xl text-[24px] text-shadow-animate uppercase font-bold'>rstkhassar</span></h1>
             </Fade>
-            <Carousel slides={SLIDES} options={OPTIONS} />
+            <Carousel items={SLIDES} autoPlayInterval={8000} />
             <Fade cascade direction="up" duration={1000} className="flex justify-center">
                 <p className="text-[#FDD78C] font-Montserrat lg:text-2xl text-sm font-bold lg:w-1/2 w-[80%] lg:text-center text-justify">
                     Welcome to Resto Kayang, your destination for authentic Moroccan cuisine. Enjoy a culinary journey with dish<span className="opacity-50">es like savory tagine and delightful couscous. Join us for a memorable dining experience where tradition meets taste.</span>
