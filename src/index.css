@@ -157,3 +157,19 @@ html {
   scroll-behavior: smooth;
 }
 
+
+.animated-slider {
+  animation: animated-slider .5s linear;
+  -webkit-animation: animated-slider .5s linear;
+}
+
+@keyframes animated-slider {
+  0% {
+    opacity: 0
+  
+  }
+
+  100% {
+    opacity: 1
+  }
+}
